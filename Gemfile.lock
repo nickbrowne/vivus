@@ -90,6 +90,7 @@ GEM
     rdiscount (2.1.7)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     slop (3.4.7)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -112,4 +113,5 @@ DEPENDENCIES
   parslet
   pry
   rdiscount
+  redcarpet
   vivus!

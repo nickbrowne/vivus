@@ -1,4 +1,5 @@
 require 'rdiscount'
+require 'redcarpet'
 
 class Block
   def initialize (source, comment, html)
@@ -12,10 +13,12 @@ class Block
   end
 
   def comments
-    RDiscount.new(@comment.join, :smart, :filter_html).to_html
+    # RDiscount.new(@comment.join, :smart, :filter_html).to_html
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true).render(@comment.join)
   end
 
   def html
-    RDiscount.new(@html.join).to_html
+    # RDiscount.new(@html.join).to_html
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, :prettify).render(@html.join)
   end
 end
